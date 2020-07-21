@@ -31,4 +31,9 @@ li {
 a {
   color: #42b983;
 }
+.hello{text-align: left;
+width: 1.333333rem;
+height: 1.333333rem;
+border: 1px solid #000;
+font-size: .24rem}
 </style>
