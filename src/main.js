@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import "babel-polyfill"
 import 'normalize.css/normalize.css'
+import './css/base.css'
 import Vue from 'vue'
 import App from './App'
 import Vuex from 'vuex'
@@ -36,11 +37,15 @@ instance.interceptors.request.use(
   }
 );
 instance.interceptors.response.use(
-  config => {
-    return config;
-  },
-  err => {
-    return Promise.reject(err);
+  res => res.status===200?Promise.resolve(res):Promise.reject(res),
+  error => {
+   const {response}=error;
+   if (response) {
+     errorHandle(response.status,response.data.massage)
+   }else{
+     console.log("断网了");
+     
+   }
   }
 );
 

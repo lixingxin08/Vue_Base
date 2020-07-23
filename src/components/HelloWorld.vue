@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
      Vuebase
+    <a href="http://baidu.com">baidu</a>
   </div>
 </template>
 
