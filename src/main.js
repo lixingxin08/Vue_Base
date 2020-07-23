@@ -22,6 +22,27 @@ if('addEventListener' in document){
      FastClick.attach(document.body)
    },false)
 }
+// 拦截器
+let instance=axios.create({timeout:5000});
+// instance.defaults.headers.common['Authorization'] = "Bearer " + getCookie("userToken");//携带cookie
+//instance.defaults.withCredentials = true;//让ajax携带cookie
+instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+instance.interceptors.request.use(
+  config => {
+    return config;
+  },
+  err => {
+    return Promise.reject(err);
+  }
+);
+instance.interceptors.response.use(
+  config => {
+    return config;
+  },
+  err => {
+    return Promise.reject(err);
+  }
+);
 
 /* eslint-disable no-new */
 new Vue({
