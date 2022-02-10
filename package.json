@@ -16,7 +16,7 @@
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "fastclick": "^1.0.6",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "normalize.css": "^7.0.0",
     "v-distpicker": "^1.0.14",
     "vue": "^2.5.2",
